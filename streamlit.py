@@ -6,7 +6,7 @@ import joblib
 
 from PIL  import Image
 
-pipeline_model = joblib.load(open('RandomForest.pkl', 'rb'))
+pipeline_model = pickle.load(open('RandomForest.pkl', 'rb'))
 
 
 #def predict_disease(docx):
@@ -19,6 +19,15 @@ pipeline_model = joblib.load(open('RandomForest.pkl', 'rb'))
 
     #results = pipeline_model.predict(docx)
     #return results[0]
+
+# title and description
+st.write("""
+# AI Q&A
+Ask me a question!
+""")
+
+# search bar
+query = st.text_input("Search!", "")
 
 
 def main():
